@@ -1,0 +1,16 @@
+syntax="proto3";
+
+option go_package="driver-service/proto/gen";
+
+service Driver {
+	rpc SendLocation(LocationReq) returns (EmptyOKResponse) {}
+}
+
+message LocationReq {
+	string long = 1;
+	string lat = 2;
+}
+
+message EmptyOKResponse {
+	string message = 1;
+}

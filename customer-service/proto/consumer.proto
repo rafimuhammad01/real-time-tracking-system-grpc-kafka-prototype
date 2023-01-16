@@ -1,0 +1,16 @@
+syntax="proto3";
+
+option go_package="driver-service/proto/gen";
+
+service Consumer {
+	rpc GetLocation(GetLocationReq) returns (stream LocationResp) {}
+}
+
+message LocationResp {
+	string long = 1;
+	string lat = 2;
+}
+
+message GetLocationReq {
+	string driver_id = 1;
+}
